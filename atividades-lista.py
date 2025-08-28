@@ -82,3 +82,4 @@ tabuleiro[6] = ['pea']*8
 tabuleiro[7] = ['tor', 'cav', 'bis', 'rai', 'rei', 'bis', 'cav', 'tor']
 tabuleiro_np = np.array(tabuleiro)
 print(tabuleiro_np)
+
