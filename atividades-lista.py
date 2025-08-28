@@ -46,15 +46,39 @@ for valores in valores:
     soma += valores
 print(f"A soma dos números é", soma)
 
-#10- Use input para receber 3 notas de dois alunos. As notas de cada aluno precisam ser armazenadas em uma lista separada que deve ser armazenada dentro de outra lista chamada notas, exemplo:
-#notas = [[7, 8, 9], [6, 5, 7]]. No fim, imprima a média de cada aluno.
+#10- Use 'input' para receber 3 notas de dois alunos. As notas de cada aluno precisam ser armazenadas 'em uma' lista separada que deve ser armazenada dentro de outra lista chamada notas, exemplo:
+#notas = [, [6, 5, 7]]. No fim, imprima a média de cada aluno.
 aluno = []
-
-for i  in range(0,2):
+for i in range(0,2):
     notas=[]
     for j in range (0,3):
         nota = int (input("Digite as notas dos alunos"))
         notas.append(nota)
-        aluno.append(notas)
-
+    aluno.append(notas)
 print(aluno)
+
+for i in range(len(aluno)):
+    soma = 0
+    notas = aluno[i]
+    if(len(notas)==3):
+     for value in notas:
+        soma+= value
+    print(f"Aluno: {i + 1}\nMedia: {soma / len(notas)}")
+
+#11- Usando list comprehension, crie um tabuleiro de xadrez vazio e depois adicione todas as peças do jogo na posição inicial. Para melhorar a visualização do tabuleiro, identifique as posições do tabuleiro da seguinte forma:
+#[ ] - para posições vazias
+#tor - para a torre
+#cav - para o cavalo
+#bis - para o bispo
+#rai - para a rainha
+#rei - para o rei
+#pea - para o peão
+#Por fim imprima o tabuleiro na tela, deixando cada linha da matriz abaixo da outra. (Dica você pode usar a biblioteca numpy para auxiliar na impressão da matriz)
+import numpy as np
+tabuleiro = [['[ ]' for _ in range(8)] for _ in range(8)]
+tabuleiro[0] = ['tor', 'cav', 'bis', 'rai', 'rei', 'bis', 'cav', 'tor']
+tabuleiro[1] = ['pea']*8
+tabuleiro[6] = ['pea']*8
+tabuleiro[7] = ['tor', 'cav', 'bis', 'rai', 'rei', 'bis', 'cav', 'tor']
+tabuleiro_np = np.array(tabuleiro)
+print(tabuleiro_np)
