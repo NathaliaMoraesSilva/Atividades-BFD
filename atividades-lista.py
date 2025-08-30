@@ -1,85 +1,79 @@
-#1-Crie uma lista chamada livros contendo 3 livros diferentes e exiba a lista na tela.
-livros = ["O Senhor das Moscas", "O Médico e o Monstro", "Biblia"]
-print(livros)
+# 1-Crie um dicionário simples
+#Crie um dicionário chamado aluno com as chaves: "nome", "idade" e "nota", e preencha com valores fictícios.
+aluno ={"nome":"João", "idade":30, "nota":6.00}
 
-#2- Usando a lista livros, exiba apenas o primeiro e o último elemento.
-print(livros[0])
-print(livros[1])
+# 2- Acessando valores
+# Dado o dicionário:
+# produto = {"nome": "Caneta", "preço": 2.5, "estoque": 100}
+# Imprima o nome do produto e a quantidade em estoque.
+produto = {"nome": "Caneta","preço":2.5, "estoque": 100}
+print(produto["nome"])
+print(produto["estoque"])
 
-#3- Adicione mais dois livros à lista livros usando o método append() e exiba a lista atualizada.
-livros.append("O Senhor dos aneis")
-livros.append("Harry Potter")
-print(livros)
+# 3-Adicionando novos pares chave-valor
+# Dado o dicionário:
+# pessoa = {"nome": "Carlos", "idade": 30}
+# Adicione uma nova chave "cidade" com valor "São Paulo".
+pessoa = {"nome": "Carlos", "idade": 30}
+pessoa["cidade"]="Recife"
+print(pessoa)
 
-#4- Insira o livro "Duna" na segunda posição da lista livros usando insert().
-livros.insert(1,"Duna")
-print(livros)
+# 4-Removendo elementos
+# Dado o dicionário:
+# carro = {"marca": "Ford", "modelo": "Fiesta", "ano": 2010}
+# Remova a chave "ano" do dicionário.
+carro={"marca":"Ford", "modelo":"Fiesta","ano":2010}
+carro.pop("ano")
+print(carro)
 
-#5- Remova o livro "Silêncio dos inocentes" da lista usando remove(). Se ele não existir, exiba a mensagem "Livro não encontrado".
-if "Silêncio dos inocentes" in livros:
-    livros.remove("Silêncio dos inocentes")
-else:
-    print("Livro não encontrado")
+# 5-Verificando existência de uma chave
+# Verifique se a chave "telefone" existe no dicionário:
+# contato = {"nome": "Ana", "email": "ana@email.com"}
+contato={"nome":"Ana", "email":"ana@email.com"}
+print(contato.get("telefone"))
 
-#6- Crie uma lista chamada números com os valores [1, 2, 3, 2, 4, 2, 5]. Mostre quantas vezes o número 2 aparece na lista.
-números = [1,2,3,2,4,2,5]
-print("O 2 é mostrados", números.count(2),"vezes")
-
-#7- Percorra a lista livros e exiba cada livro com a frase: "O livro <nome do livro> é interessante"
-for livros in livros:
-    print(f"O livro",{livros},"é interessante" )
-
-#8- Dada a lista idades = [12, 18, 25, 14, 30], use um laço para exibir somente as idades maiores ou iguais a 18.
-idades = [12, 18, 25, 14, 30]
-
-for idades in idades:
-    if idades >= 18:
-        print(idades)
+# 6-Contando frequência de palavras
+# Escreva uma função que receba uma lista de palavras e retorne um dicionário com a contagem de cada palavra.
+# palavras = ["maçã", "banana", "maçã", "laranja", "banana", "maçã"]
+palavras =["maçã", "banana", "maçã", "laranja", "banana", "maçã"]
+contagem ={}
+for palavra in palavras:
+    if palavra in contagem:
+        contagem[palavra] += 1
     else:
-        print("")
+        contagem[palavra] = 1
+print(contagem)
+
+# 7-Invertendo um dicionário
+# Dado o dicionário:
+# d = {"a": 1, "b": 2, "c": 3}
+# Crie um novo dicionário invertendo as chaves e os valores: {1: "a", 2: "b", 3: "c"}.
+d = {"a:":1, "b":2, "c":3}
+d = {1: "a", 2: "b", 3: "c"}
+
+#8 Dicionário com listas
+#Crie um dicionário onde cada chave é o nome de um aluno e o valor é uma lista com 3 notas. Depois, imprima a média de cada aluno.
+# Dicionário com alunos e suas notas
+alunos = {
+    "Ana": [8, 7, 9],
+    "Bruno": [6, 9, 7],
+    "Carla": [10, 9, 8]
+}
+for nome, notas in alunos.items():
+    media = sum(notas) / len(notas)
+    print(f"A média de {nome} é {media:.2f}")
+
+# 9- Mesclando dois dicionários
+#Escreva uma função que recebe dois dicionários e retorna um novo dicionário contendo todos os pares chave-valor. Se houver chaves repetidas, o valor do segundo dicionário deve prevalecer.
+def mesclar_dict(d1, d2):
+    # Cria um novo dicionário copiando o primeiro
+    resultado = d1.copy()
+# Exemplo
+dict1 = {"a": 1, "b": 2}
+dict2 = {"b": 3, "c": 4}
+
+novo_dict = mesclar_dict(dict1, dict2)
+print(novo_dict)
 
 
-#9- Crie uma lista valores = [10, 20, 30, 40]. Use um laço for para calcular manualmente a soma de todos os valores.
-valores = [10, 20, 30 ,40]
-soma = 0
-for valores in valores:
-    soma += valores
-print(f"A soma dos números é", soma)
-
-#10- Use 'input' para receber 3 notas de dois alunos. As notas de cada aluno precisam ser armazenadas 'em uma' lista separada que deve ser armazenada dentro de outra lista chamada notas, exemplo:
-#notas = [, [6, 5, 7]]. No fim, imprima a média de cada aluno.
-aluno = []
-for i in range(0,2):
-    notas=[]
-    for j in range (0,3):
-        nota = int (input("Digite as notas dos alunos"))
-        notas.append(nota)
-    aluno.append(notas)
-print(aluno)
-
-for i in range(len(aluno)):
-    soma = 0
-    notas = aluno[i]
-    if(len(notas)==3):
-     for value in notas:
-        soma+= value
-    print(f"Aluno: {i + 1}\nMedia: {soma / len(notas)}")
-
-#11- Usando list comprehension, crie um tabuleiro de xadrez vazio e depois adicione todas as peças do jogo na posição inicial. Para melhorar a visualização do tabuleiro, identifique as posições do tabuleiro da seguinte forma:
-#[ ] - para posições vazias
-#tor - para a torre
-#cav - para o cavalo
-#bis - para o bispo
-#rai - para a rainha
-#rei - para o rei
-#pea - para o peão
-#Por fim imprima o tabuleiro na tela, deixando cada linha da matriz abaixo da outra. (Dica você pode usar a biblioteca numpy para auxiliar na impressão da matriz)
-import numpy as np
-tabuleiro = [['[ ]' for _ in range(8)] for _ in range(8)]
-tabuleiro[0] = ['tor', 'cav', 'bis', 'rai', 'rei', 'bis', 'cav', 'tor']
-tabuleiro[1] = ['pea']*8
-tabuleiro[6] = ['pea']*8
-tabuleiro[7] = ['tor', 'cav', 'bis', 'rai', 'rei', 'bis', 'cav', 'tor']
-tabuleiro_np = np.array(tabuleiro)
-print(tabuleiro_np)
 
