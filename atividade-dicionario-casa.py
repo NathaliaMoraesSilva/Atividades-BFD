@@ -9,6 +9,7 @@ aluno = {"nome ": "carlos", "idade": 25, "nota": 8.0}
 produto = {"nome": "Caneta", "preço": 2.5, "estoque": 100}
 print(produto["nome"])
 print(produto["estoque"])
+
 # 3-Adicionando novos pares chave-valor
 #Dado o dicionário:
 #pessoa = {"nome": "Carlos", "idade": 30}
