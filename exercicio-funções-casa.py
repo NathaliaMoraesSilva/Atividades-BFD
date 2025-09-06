@@ -77,8 +77,8 @@ def soma(x, y):
     return x + y
 def multiplicacao(x, y):
     return x * y
-print(aplicar_operacao(3, 4, soma))          # 7
-print(aplicar_operacao(3, 4, multiplicacao)) # 12
+print(aplicar_operacao(3, 4, soma))
+print(aplicar_operacao(3, 4, multiplicacao))
 
 
 
