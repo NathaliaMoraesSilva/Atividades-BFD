@@ -1,1 +1,0 @@
-n = input("digite seu nome")
